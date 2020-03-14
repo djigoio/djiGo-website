@@ -1,0 +1,14 @@
+footer{
+    margin-top: 30px;
+}
+
+.footer--links{
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+    list-style: none;
+}
+
+.footer--links a{
+    color: #1C0D02;
+}
