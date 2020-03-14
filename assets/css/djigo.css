@@ -15,6 +15,11 @@ body{
     justify-content: space-between;
 }
 
+.container{
+    max-width: 620px;
+    margin: 0 auto;
+}
+
 .homepage{
     padding: 15px;
 

@@ -2,8 +2,9 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     justify-content: center;
-    align-items: center;
     padding: 30px 15px;
+    grid-gap: 15px;
+    margin: 0 auto;
 }
 
 .languages details {
@@ -27,7 +28,7 @@
     color: #444140;
 }
 
-.languages .vue b {
+.languages .articles b {
     color: #41B883;
 }
 
@@ -38,8 +39,19 @@
     text-overflow: ellipsis;
 }
 
+.languages summary:focus{
+    outline: none;
+}
+
 details p{
     padding-left: 35px;
+}
+
+details a{
+    display: block;
+}
+details a:visited{
+    color: #444140;
 }
 
 details[open] summary~* {
