@@ -3,11 +3,12 @@ package main
 import (
 	"html/template"
 	"net/http"
-	"strings"
 )
 
 func main() {
 
+	fs := http.FileServer(http.Dir("./assets"))
+	http.Handle("/assets/", http.StripPrefix("/assets/", fs))
 	http.HandleFunc("/", Index)
 	http.ListenAndServe(":8080", nil)
 }
@@ -18,18 +19,12 @@ type IndexPage struct {
 }
 
 type GeneralTemplates struct {
-	Header, Footer string
-}
-
-func getGenericTemplates() string {
-	genericTemplates := []string{"./templates/index.html", "./templates/header.html", "./templates/footer.html"}
-	return strings.Join(genericTemplates, ",")
+	Header, Footer, Languages, Contact string
 }
 
 func Index(w http.ResponseWriter, r *http.Request) {
-	generalTemplates := GeneralTemplates{"./templates/header.html", "./templates/footer.html"}
-	indexTemplate := "./templates/index.html"
-	pageData := IndexPage{"Antonio Djigo", "A website made in go, because let's go"}
-	t, _ := template.ParseFiles(generalTemplates.Header, generalTemplates.Footer, indexTemplate)
+	generalTemplates := GeneralTemplates{"./templates/header.html", "./templates/footer.html", "./templates/languages.html", "./templates/contact.html"}
+	pageData := IndexPage{"Antonio Djigo", "I'm Antonio Djigo, Web Developer from the Canary Islands"}
+	t, _ := template.ParseFiles("./index.html", generalTemplates.Header, generalTemplates.Footer, generalTemplates.Languages, generalTemplates.Contact)
 	t.Execute(w, pageData)
 }
