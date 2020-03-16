@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     justify-content: center;
-    padding: 30px 15px;
+    padding: 30px 0px;
     grid-gap: 15px;
     margin: 0 auto;
 }
@@ -26,6 +26,10 @@
 
 .languages .wordpress b {
     color: #444140;
+}
+
+.languages .css-js b{
+    color: #82508f;
 }
 
 .languages .articles b {
