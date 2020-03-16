@@ -1,6 +1,6 @@
 .languages {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
     justify-content: center;
     padding: 30px 0px;
     grid-gap: 15px;
@@ -47,6 +47,10 @@
     outline: none;
 }
 
+details {    
+    height: fit-content;
+
+}
 details p{
     padding-left: 35px;
 }
