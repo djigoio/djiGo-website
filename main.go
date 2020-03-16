@@ -19,7 +19,7 @@ func main() {
 	router := gin.New()
 	router.Use(gin.Logger())
 	router.LoadHTMLGlob("templates/*.html")
-	router.Static("/assets", "static")
+	router.Static("/assets", "assets")
 
 	router.GET("/", func(c *gin.Context) {
 		c.HTML(http.StatusOK, "index.html", nil)
