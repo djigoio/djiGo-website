@@ -53,9 +53,11 @@ details p{
 
 details a{
     display: block;
-}
-details a:visited{
     color: #444140;
+}
+
+details a:visited{
+    color: #3b4a5e;
 }
 
 details[open] summary~* {
