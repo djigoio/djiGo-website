@@ -7,6 +7,7 @@ import (
 
 	"github.com/gin-gonic/gin"
 	_ "github.com/heroku/x/hmetrics/onload"
+	"github.com/thinkerou/favicon"
 )
 
 func main() {
@@ -20,6 +21,7 @@ func main() {
 	router.Use(gin.Logger())
 	router.LoadHTMLGlob("templates/*.html")
 	router.Static("/assets", "assets")
+	router.Use(favicon.New("./favicon.ico"))
 
 	router.GET("/", func(c *gin.Context) {
 		c.HTML(http.StatusOK, "index.html", nil)
