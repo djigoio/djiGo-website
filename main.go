@@ -8,6 +8,7 @@ import (
 	"github.com/gin-gonic/gin"
 	_ "github.com/heroku/x/hmetrics/onload"
 	"github.com/thinkerou/favicon"
+	_ "github.com/thinkerou/favicon"
 )
 
 func main() {
